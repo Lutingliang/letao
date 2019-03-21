@@ -1,5 +1,6 @@
 $(function(){
     var pageSize = 5;
+    var page1 = 1;
     render(1);
     var id,isDelete;
     
@@ -10,6 +11,7 @@ $(function(){
     // 3.给确定注册事件点击事件
     // 4.发送ajax请求 启用获取禁用用户
     $('tbody').on('click','.btn',function(){
+        // console.log(page1); 
         // console.log('哈哈');
         // 弹出模态框
         $('#usermodal').modal('show')
@@ -22,6 +24,7 @@ $(function(){
     })
     // 给模态框的update注册点击事件
     $('.update').on('click',function(){
+        // console.log(page1); 
         // console.log('我被点了');
         $.ajax({
             type:'post'
@@ -35,7 +38,7 @@ $(function(){
                 // 关闭模态框
                 $('#usermodal').modal('hide')
                 // 重新渲染
-                render(1)
+                render(page1)
 
             }
         })
@@ -52,13 +55,18 @@ $(function(){
                 pageSize: pageSize
             },
             success:function(info){
-            //    console.log(info);
+            //    console.log(page);
             $('tbody').html(template('user-tpl',info));
             paginator(info,render);
+            page1 = page;
+            // console.log(page1);
+            return page1
             }
-        })
-    }
+        }) 
+    }   
 })
+
+
 
 
 
