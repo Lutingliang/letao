@@ -127,3 +127,8 @@ html,body{
     width: 47%;
     /* background-color: red; */
 }
+.table.table-bordered th,
+.table.table-bordered td{
+    text-align: center;
+    vertical-align: middle;
+}
