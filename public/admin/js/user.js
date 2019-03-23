@@ -60,7 +60,7 @@ $(function(){
             paginator(info,render);
             page1 = page;
             // console.log(page1);
-            return page1
+            // return page1
             }
         }) 
     }   

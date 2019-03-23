@@ -119,6 +119,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">添加分类</h4>
                 </div>
+               <form>
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="dropdown">
@@ -127,32 +128,39 @@
                                 <span class="dropdown-text">请选择一级分类</span>
                                 <span class="caret"></span>
                             </button>
+                            <!-- 隐藏域 -->
+                            <input type="hidden" name="categoryId">
                             <ul class="dropdown-menu">
 
                             </ul>
                         </div>
                     </div>
                         <div class="form-group">
-                            <input type="text" name="categoryName" class="form-control" placeholder="请输入二级分类的名称">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类的名称">
                     </div>
                         <div class="form-group">
                             <label for="file" class="btn btn-default">上传图片</label>
-                            <input type="file" class="btn btn-default hidden" id="file">
+                            <input type="file" class="btn btn-default hidden" id="file" name="pic1" data-url="/category/addSecondCategoryPic">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group img_box">
                             <img src="images/big.jpg" width="100" height="100" alt="">
+                            <input type="hidden" name="brandLogo">
                         </div>
-                </div>
+                </div> 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">确定</button>
+                    <button type="submit" class="btn btn-primary">确定</button>
                 </div>
+               </form>
             </div>
+           
         </div>
     </div>
 
 
     <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
